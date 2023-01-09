@@ -11,9 +11,17 @@ en varias líneas
 
 print("----------")
 
-# Tenemos diferentes TIPOS DE DATOS
-# Enteros o integer:
+# Tenemos diferentes TIPOS DE DATOS:
+
+#   Enteros --> integer:
 print(type(10))
 
-# Reales o "float":
+#   Reales, o no enteros --> float:
+print(type(2.3))
+
+#   Booleanos --> bool: 
+print(type(True))
+
+#   Números complejos --> complex:
+print(type(1 + 6j))
 
