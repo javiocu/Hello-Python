@@ -13,7 +13,7 @@ print("----------")
 
 # Tenemos diferentes TIPOS DE DATOS:
 
-#   Enteros --> integer:
+#   Enteros --> int:
 print(type(10))
 
 #   Reales, o no enteros --> float:
