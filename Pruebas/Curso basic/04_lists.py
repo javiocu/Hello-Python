@@ -2,6 +2,9 @@
 
 s = "------------"
 
+my_list = list()
+my_list = []
+
 # Formas de definir
 my_list = [1, 2, 3, 4, "Javier", "Ocaña", 28]
 
