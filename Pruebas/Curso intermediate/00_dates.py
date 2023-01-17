@@ -46,7 +46,10 @@ print(current_date.day)
 print(current_date - date(2022, 12, 1))
 
 
-from datetime import timedelta
+from datetime import timedelta # Timedelta para trabajar con diferencias de fechas
 
 
-time_delta = timedelta(12, 23,)
+start_time_delta = timedelta(12, 23)
+end_time_delta = timedelta(13,123)
+
+print(start_time_delta - end_time_delta)
