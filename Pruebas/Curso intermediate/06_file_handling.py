@@ -22,6 +22,8 @@ txt_file.close () #Es buena práctica cerrar ficheros si no se van a seguir usan
 
 #os.remove ("Pruebas/Curso intermediate/my_file.txt") # Para eliminar el fichero
 
+
+
 ## .json file
 import json
 
@@ -47,4 +49,42 @@ json_file = open("Pruebas/Curso intermediate/my_file.json", "r+")
 
 cargado = json.load (json_file)
 
-print(type(cargado)) # Transforma el json en un diccionario para python
+print(cargado)
+
+print(type(cargado)) # load Transforma el json en un diccionario para python
+
+
+
+## csv file
+
+import csv
+
+csv_file = open("Pruebas\Curso intermediate\my_file.csv", "w+")
+
+
+json_text = {
+    "nombre":"Javier",
+    "apellido":"Ocaña",
+    "edad":28,
+    "lenguages":["python", "swift", "java"]}
+
+
+csv_writer = csv.writer(csv_file)
+
+csv_writer.writerow(["nombre", "apellido", "edad", "lenguages"])
+csv_writer.writerow(["Javier", "Cuesta", 28, "python"])
+csv_writer.writerow(["Jesus", "Gomez", 2, "Java"])
+csv_writer.writerow(["Pericos", "Palotes", 56, "Python"])
+
+csv_file.close()
+
+with open("Pruebas\Curso intermediate\my_file.csv") as textito_csv:
+    for fila in textito_csv.readlines():
+        print(fila)
+
+textito_csv.close()
+
+## xlsx
+
+# import xlrd # Debe instalarse el módulo
+
