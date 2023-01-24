@@ -53,5 +53,11 @@ print(re.sub("Lección|lección", "LECCIÓN", my_string))
 print(re.sub("[l|L]ección", "LECCIÓN", my_string))
 
 
+email = "javiocu@protonmail.com"
 
 
+print(re.findall(r"^[A-Za-z._+-]*+@[A-Za-z._+-]+\.+[a-zA-Z0-9]*+$", email))
+print(re.findall(r"^[A-Za-z._+-]*+@+[A-Za-z._+-]+\.?", email))
+
+
+# Para aprender y validar expresiones regulares: https://regex101.com/
