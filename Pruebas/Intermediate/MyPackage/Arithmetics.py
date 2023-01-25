@@ -18,4 +18,8 @@ def sumando ():
             segundo = input("Eso no es un número, por favor introduce un número: ")
     suma = primero + segundo
     final = "La suma de ambos número es: " + str(int(suma))  # Recordar que para que devuelva el valor de return hay que printear
-    return(final)
+    return(print(final))
+
+
+
+sumando()

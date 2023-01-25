@@ -28,5 +28,7 @@ import requests # Nos sirve para hacer peticiones a un API
 
 # Arithmetics Package
 
-import 
+from MyPackage import Arithmetics
+
+Arithmetics.sumando()
 
