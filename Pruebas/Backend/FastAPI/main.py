@@ -42,25 +42,39 @@ async def usersjson():
             {"name":"Abdul","surname":"Ramal","url":"http://twitter.com/AbduliTo","age":46}]
 
 
-
-@app.get("/users")
-async def users(id:int):
+@app.get("/lista/")
+async def vuelta():
     return users_list
+
+    
+
+# Query                                  Con query se dice cuando se usa ? en la barra delante de la clave que quieras buscar, este caso id
+@app.get("/user/")
+async def usersa(id:int):
+    return search_user(id)
 
 # Path
 @app.get("/user/{id}")
-async def userss(id:int):
-    users = filter(lambda user: user.id == id , users_list)
-    try:
-        return list(users)[0]
-    except:
-        return f"No se ha encontrado un usuario con el id:{id}"
+async def users(id:int):
+    return search_user(id)
+    
 
-# Query                                                              Con query se dice cuando se usa ? en la barra delante de la clave que quieras buscar, este caso id
-@app.get("/userquery/")
-async def user(id:int):
+
+# Post
+
+@app.post("/user/")
+async def user(vale: User):
+    if type(search_user(vale.id)) == User:
+        return f"El usuario con id: {vale.id} ya existe"
+    else:
+        users_list.append(vale)
+        return f"Todo bien, se ha añadido el usurario con id: {vale.id}"
+
+
+
+def search_user(id):
     users = filter(lambda user: user.id == id , users_list)
     try:
         return list(users)[0]
     except:
-        return f"ERROR: No se ha encontrado un usuario con el id:{id}"
+        return f"No se ha encontrado un User con el id:{id}"
